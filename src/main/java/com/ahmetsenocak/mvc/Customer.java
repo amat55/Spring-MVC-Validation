@@ -1,5 +1,6 @@
 package com.ahmetsenocak.mvc;
 
+import com.ahmetsenocak.mvc.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -16,6 +17,17 @@ public class Customer {
     @Min(value = 0, message = "must be greater than 0 or equal to 0")
     @Max(value = 10, message = "must be less than 0 or equal to 10")
     private Integer freePasses;
+
+    @CourseCode
+    private String courseCode;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     public String getPostalCode() {
         return postalCode;
